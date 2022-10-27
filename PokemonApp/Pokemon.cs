@@ -17,7 +17,7 @@ namespace PokemonApp{
         //Constructor - method used for object initialization. We pass it the values we want 
         //to set for the object we are creating.
 
-        public Pokemon(string PokemonName, int PokemonNum, string PokemonType, int PokemonHealth, string PokemonAbility = "default?"){
+        public Pokemon(string PokemonName, int PokemonNum, string PokemonType, int PokemonHealth, Abilities[] PokemonAbility){
 
             this.name = PokemonName;
             this.DexNumber = PokemonNum;
@@ -25,10 +25,13 @@ namespace PokemonApp{
             this.health = PokemonHealth;
             //this.ability = PokemonAbility;
             //lets add a default moveset for now
+            /*
             this.moveset[0] = new Abilities("bite",20);
             this.moveset[1] = new Abilities("scratch",10);
             this.moveset[2] = new Abilities("flamethrower",50);
             this.moveset[3] = new Abilities("splash",0);
+            */
+            this.moveset=PokemonAbility;
         }
 
 
