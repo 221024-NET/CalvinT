@@ -67,6 +67,11 @@ namespace PokemonApp{
                 + " Speed is "+ moveset[i].getSpeed());
             }
         }
+
+
+        public Abilities getMoveset(int index){
+            return this.moveset[index];
+        }
     }
 
 

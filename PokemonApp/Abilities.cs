@@ -18,13 +18,29 @@ namespace PokemonApp{
             return this.abilityName;
         }
 
+        public void setAbilityName(string name){
+            this.abilityName = name;
+        }
+
         public int getDamage(){
             return this.damage;
+        }
+
+        public void setDamage(int healthLost){
+            this.damage = healthLost;
         }
 
         public int getSpeed(){
             return this.speed;
         }
+
+        public void setSpeed(int num){
+            this.speed = num;
+        }
+
+        public string printSpecificAbility(){
+            return "Abilities name is: " + this.abilityName + " Ability Damage is: " + this.damage + " Ability Speed is: " + this.speed;
+        } 
 
     }
 }
