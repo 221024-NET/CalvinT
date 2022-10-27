@@ -6,10 +6,12 @@ namespace PokemonApp{
 
         private string abilityName {get; set;}
         private int damage {get; set;}
+        private int speed;
 
-        public Abilities(string name, int healthLost){
+        public Abilities(string name, int healthLost,int speed){
             this.abilityName = name;
             this.damage = healthLost;
+            this.speed = speed;
         }
     
         public string getAbilityName(){
@@ -18,6 +20,10 @@ namespace PokemonApp{
 
         public int getDamage(){
             return this.damage;
+        }
+
+        public int getSpeed(){
+            return this.speed;
         }
 
     }

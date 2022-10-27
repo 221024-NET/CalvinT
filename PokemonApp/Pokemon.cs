@@ -62,7 +62,9 @@ namespace PokemonApp{
 
         public void printAbilities(){
             for(int i = 0;i < 4 ; i++){
-                Console.WriteLine("Ability name is "+ moveset[i].getAbilityName() + " Damage is " + moveset[i].getDamage());
+                Console.WriteLine("Ability name is "+ moveset[i].getAbilityName() 
+                + " Damage is " + moveset[i].getDamage() 
+                + " Speed is "+ moveset[i].getSpeed());
             }
         }
     }
