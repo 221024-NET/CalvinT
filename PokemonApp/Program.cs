@@ -4,8 +4,17 @@ namespace PokemonApp{
 
     class Program{
 
-        public void battle(Pokemon player, Pokemon computer){
-            
+        public static void battle(Pokemon player, Pokemon computer){
+            Console.WriteLine("Begin Pokemon Battle!");
+                Console.WriteLine("Choose an attack: 1-4");
+                Console.WriteLine("1. "+ player.getMoveset(0).getAbilityName()
+                 + " 2. " + player.getMoveset(1).getAbilityName()
+                 + " 3. " + player.getMoveset(2).getAbilityName()
+                 + " 4. " + player.getMoveset(3).getAbilityName());
+                int input = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Damage dealt: "+player.attack(input-1));
+                
+
         }
 
         static void Main(string[] args)
@@ -26,6 +35,12 @@ namespace PokemonApp{
             Pokemon magikarp = new Pokemon("magikarp",22,"fish",200,movesetB);
             pikachu.printAbilities();
             Console.WriteLine(pikachu.getMoveset(2).getDamage());
+
+            Console.WriteLine(magikarp.getHealth());
+            magikarp.setHealth(20);
+            Console.WriteLine(magikarp.getHealth());
+
+            Program.battle(magikarp,pikachu);
         }
         
 

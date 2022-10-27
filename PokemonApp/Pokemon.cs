@@ -23,14 +23,6 @@ namespace PokemonApp{
             this.DexNumber = PokemonNum;
             this.type = PokemonType;
             this.health = PokemonHealth;
-            //this.ability = PokemonAbility;
-            //lets add a default moveset for now
-            /*
-            this.moveset[0] = new Abilities("bite",20);
-            this.moveset[1] = new Abilities("scratch",10);
-            this.moveset[2] = new Abilities("flamethrower",50);
-            this.moveset[3] = new Abilities("splash",0);
-            */
             this.moveset=PokemonAbility;
         }
 
@@ -68,9 +60,24 @@ namespace PokemonApp{
             }
         }
 
+        public void setMoveSet(Abilities ability,int index){
+            this.moveset[index] = ability;
+        }
 
         public Abilities getMoveset(int index){
             return this.moveset[index];
+        }
+
+        public void setHealth(int num){
+            this.health = num;
+        }
+
+        public int getHealth(){
+            return this.health;
+        }
+
+        public int attack(int num){
+            return this.moveset[num].getDamage();
         }
     }
 
