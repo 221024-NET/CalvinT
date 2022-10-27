@@ -10,6 +10,22 @@ public class Program
 	//[access modifier] [modifier] [return type] [method name] ([parameters])
 	public static void Main()
 	{
+		bool loop = true;
+		while(loop){
+			CoinFlipper();
+			Console.WriteLine("Would you like to flip more coins?");
+			Console.WriteLine("Enter y or Y for yes, anything else for no");
+			string input = Console.ReadLine().ToUpper();
+
+			if(input.Equals("Y"))
+				loop = true;
+			else 
+				loop = false;
+		}
+		
+	}
+
+	public static void CoinFlipper(){
 		Console.WriteLine("Starting Coin Flipper:");
 		
 		Console.WriteLine("Enter the number of coins to flip: ");
