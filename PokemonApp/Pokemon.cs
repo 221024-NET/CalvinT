@@ -9,7 +9,7 @@ namespace PokemonApp{
         int DexNumber {get; set;}
         string type {get; set;}
         int health {get; set;}
-        string ability {get; set;}
+        Abilities[] moveset = new Abilities [4];
 
         //Static field - every pokemon shares this field and it's value
         public static string isPokemon = "This is a static field. We've been through this, I'm in fact a pokemon.";
@@ -23,7 +23,12 @@ namespace PokemonApp{
             this.DexNumber = PokemonNum;
             this.type = PokemonType;
             this.health = PokemonHealth;
-            this.ability = PokemonAbility;
+            //this.ability = PokemonAbility;
+            //lets add a default moveset for now
+            this.moveset[0] = new Abilities("bite",20);
+            this.moveset[1] = new Abilities("scratch",10);
+            this.moveset[2] = new Abilities("flamethrower",50);
+            this.moveset[3] = new Abilities("splash",0);
         }
 
 
@@ -38,7 +43,7 @@ namespace PokemonApp{
 
         //Instance method - depends on the state of an instance of that class. Belongs to the object. 
         public void PrintName(){
-            Console.WriteLine("My name is " + this.name + "." + " My number is " + this.DexNumber + ". My ability is " + this.ability);
+            Console.WriteLine("My name is " + this.name + "." + " My number is " + this.DexNumber );
 
         }
 
@@ -50,6 +55,12 @@ namespace PokemonApp{
         //Method Overriding - ToString()
         public override string ToString(){
             return this.name + " " + this.type;
+        }
+
+        public void printAbilities(){
+            for(int i = 0;i < 4 ; i++){
+                Console.WriteLine("Ability name is "+ moveset[i].getAbilityName() + " Damage is " + moveset[i].getDamage());
+            }
         }
     }
 

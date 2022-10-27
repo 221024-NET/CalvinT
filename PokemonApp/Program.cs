@@ -12,7 +12,7 @@ namespace PokemonApp{
 
             Pokemon pikachu2 = new Pokemon("Pikachu", 25, "Electric", 12);
             Pokemon charizard = new Pokemon("Charizard");
-            
+
 
 
             //Calling an Instance method - belongs to the object itself.
@@ -33,6 +33,7 @@ namespace PokemonApp{
             Console.WriteLine(pikachu.ToString());
 
             Console.WriteLine(pikachu.name);
+            pikachu.printAbilities();
 
         }
         
