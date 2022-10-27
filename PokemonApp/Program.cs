@@ -9,20 +9,25 @@ namespace PokemonApp{
             Console.WriteLine("Begin Pokemon Battle!");
             Random computerRolls = new Random();
 
-
+                //Players turn
+                Console.WriteLine("Player has " + player.getHealth() );
                 Console.WriteLine("Choose an attack: 1-4");
                 Console.WriteLine("1. "+ player.getMoveset(0).getAbilityName()
                  + " 2. " + player.getMoveset(1).getAbilityName()
                  + " 3. " + player.getMoveset(2).getAbilityName()
                  + " 4. " + player.getMoveset(3).getAbilityName());
-
                 int input = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Your Damage dealt: "+player.attack(input-1));
- 
+                computer.setHealth(computer.getHealth()-player.attack(input-1));
+                Console.WriteLine("Computer has " + computer.getHealth()+ " left");
+
+                //Computers turn
                 int computersInput = computerRolls.Next(1,5);
                 Console.WriteLine(computersInput);
-
+                
                 Console.WriteLine("Computer's damage dealt: " + computer.attack(computersInput-1));
+                player.setHealth(player.getHealth()-computer.attack(input));
+                Console.WriteLine("Player has " + player.getHealth() + " left");
 
         }
 
@@ -45,9 +50,6 @@ namespace PokemonApp{
             pikachu.printAbilities();
             Console.WriteLine(pikachu.getMoveset(2).getDamage());
 
-            Console.WriteLine(magikarp.getHealth());
-            magikarp.setHealth(20);
-            Console.WriteLine(magikarp.getHealth());
 
             Program.battle(magikarp,pikachu);
         }
