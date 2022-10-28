@@ -8,9 +8,9 @@ namespace PokemonApp{
         private int damage {get; set;}
         private int speed;
 
-        public Abilities(string name, int healthLost,int speed){
+        public Abilities(string name, int num,int speed){
             this.abilityName = name;
-            this.damage = healthLost;
+            this.damage = num;
             this.speed = speed;
         }
     
